@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوطة التربية الإسلامية - الصف الثالث الثانوي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c5f2d;
+            --secondary: #97bc62;
+            --dark: #1a3c27;
+            --light: #f5f5dc;
+            --accent: #8b4513;
+            --text: #333;
+            --gold: #d4af37;
+            --blue: #3498db;
+            --purple: #8e44ad;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9f5e9 100%);
+            color: var(--text);
+            line-height: 1.8;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* تصميم الهيدر */
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: white;
+            padding: 1.8rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 4px solid var(--gold);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        .header-content::before {
+            content: "﴾";
+            position: absolute;
+            left: 20px;
+            top: 0;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: 'Traditional Arabic', serif;
+        }
+        
+        .header-content::after {
+            content: "﴿";
+            position: absolute;
+            right: 20px;
+            top: 0;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: 'Traditional Arabic', serif;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, var(--gold), #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .teacher-info {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin-top: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        /* تصميم المحتوى الرئيسي */
+        .container {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .nav-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 2.2rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1.8rem;
+        }
+        
+        .unit-card {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .unit-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .unit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--primary));
+            z-index: 2;
+        }
+        
+        .unit-header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1.4rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .unit-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        .unit-content {
+            padding: 1.8rem;
+        }
+        
+        .lessons-list {
+            list-style: none;
+        }
+        
+        .lessons-list li {
+            padding: 0.9rem 0;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .lessons-list li:hover {
+            background: rgba(151, 188, 98, 0.1);
+            border-radius: 8px;
+            padding-left: 10px;
+        }
+        
+        .lessons-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .lessons-list li i {
+            color: var(--primary);
+            margin-left: 0.8rem;
+            font-size: 1.1rem;
+            background: rgba(151, 188, 98, 0.2);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .section-title {
+            color: var(--dark);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--gold);
+            display: flex;
+            align-items: center;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 120px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .section-title i {
+            margin-left: 1.2rem;
+            color: var(--primary);
+            background: rgba(151, 188, 98, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+        
+        .lesson-title {
+            color: var(--dark);
+            font-size: 1.8rem;
+            margin: 2rem 0 1.5rem;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            border-right: 4px solid var(--gold);
+        }
+        
+        .lesson-title i {
+            margin-left: 1rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .verses-container {
+            background: linear-gradient(135deg, var(--light) 0%, #e6f0e6 100%);
+            border-radius: 16px;
+            padding: 2.2rem;
+            margin: 1.8rem 0;
+            border-right: 5px solid var(--primary);
+            font-family: 'Traditional Arabic', serif;
+            font-size: 1.8rem;
+            line-height: 2.5;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .verses-container::before {
+            content: "﴿";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(0, 0, 0, 0.05);
+        }
+        
+        .verses-container::after {
+            content: "﴾";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 5rem;
+            color: rgba(0, 0, 0, 0.05);
+        }
+        
+        .explanation {
+            background: linear-gradient(135deg, rgba(240, 247, 240, 0.9) 0%, rgba(230, 245, 230, 0.9) 100%);
+            border-radius: 16px;
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .questions {
+            background: linear-gradient(135deg, rgba(249, 245, 235, 0.9) 0%, rgba(240, 235, 220, 0.9) 100%);
+            border-radius: 16px;
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 3px solid var(--gold);
+        }
+        
+        .questions h4 {
+            color: var(--dark);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+        }
+        
+        .questions h4 i {
+            margin-left: 1rem;
+            color: var(--primary);
+        }
+        
+        .questions ul {
+            padding-right: 2rem;
+        }
+        
+        .questions li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-right: 1.5rem;
+        }
+        
+        .questions li::before {
+            content: "•";
+            color: var(--primary);
+            font-size: 1.5rem;
+            position: absolute;
+            right: 0;
+            top: -2px;
+        }
+        
+        .video-container {
+            background: linear-gradient(135deg, rgba(240, 247, 240, 0.9) 0%, rgba(230, 245, 230, 0.9) 100%);
+            border-radius: 18px;
+            padding: 2.2rem;
+            text-align: center;
+            margin: 2.2rem 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(151, 188, 98, 0.3);
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            height: 280px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            margin: 1.5rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+        }
+        
+        .video-placeholder i {
+            font-size: 5rem;
+            margin-left: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(44, 95, 45, 0.3);
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(44, 95, 45, 0.5);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .btn:hover::before {
+            opacity: 1;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--light);
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 1rem 2.2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            color: #666;
+            position: relative;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            z-index: 1;
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+        
+        .tab-btn.active {
+            color: var(--dark);
+        }
+        
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+            z-index: 2;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.6s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .search-container {
+            display: flex;
+            margin: 1.5rem 0 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .search-container input {
+            flex: 1;
+            padding: 1rem 1.8rem;
+            border: 2px solid #ddd;
+            border-radius: 50px 0 0 50px;
+            font-size: 1.1rem;
+            outline: none;
+            background: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+        
+        .search-container input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(44, 95, 45, 0.2);
+        }
+        
+        .search-container button {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+        
+        .search-container button:hover {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+        }
+        
+        /* قسم المطور المميز */
+        .developer-section {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 5px solid var(--gold);
+        }
+        
+        .developer-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 20%);
+        }
+        
+        .developer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .developer-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--gold), #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .developer-name {
+            font-size: 6rem;
+            font-weight: 900;
+            margin: 0.5rem 0;
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .developer-name::after {
+            content: '</>';
+            position: absolute;
+            top: -20px;
+            right: -50px;
+            font-size: 3rem;
+            color: var(--gold);
+            opacity: 0.7;
+        }
+        
+        .developer-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        .developer-description {
+            max-width: 700px;
+            margin: 1.5rem auto;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: #cbd5e1;
+        }
+        
+        .developer-skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .skill-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 16px;
+            padding: 1.8rem;
+            min-width: 220px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background: rgba(59, 130, 246, 0.2);
+        }
+        
+        .skill-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.2rem;
+            color: #3b82f6;
+        }
+        
+        .skill-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--gold);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: #94a3b8;
+            position: relative;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1.8rem;
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .tech-item {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 16px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-8px) scale(1.1);
+            background: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+        }
+        
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+        
+        .tech-name {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        
+        .floating-code {
+            position: absolute;
+            font-size: 8rem;
+            font-weight: 800;
+            opacity: 0.05;
+            z-index: 1;
+            font-family: monospace;
+        }
+        
+        .code-1 { top: 10%; left: 5%; animation: float 15s infinite linear; }
+        .code-2 { top: 30%; right: 5%; animation: float 18s infinite linear reverse; }
+        .code-3 { bottom: 20%; left: 15%; animation: float 12s infinite linear; }
+        .code-4 { top: 60%; right: 20%; animation: float 20s infinite linear reverse; }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        /* الفوتر */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #152920);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gold);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-content p {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+        
+        /* التجاوب */
+        @media (max-width: 992px) {
+            .units-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .developer-name {
+                font-size: 4.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .teacher-info {
+                font-size: 1rem;
+                padding: 0.5rem 1.2rem;
+            }
+            
+            .developer-name {
+                font-size: 3.5rem;
+            }
+            
+            .developer-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .verses-container {
+                font-size: 1.5rem;
+                padding: 1.8rem;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                text-align: right;
+                border-bottom: 1px solid #eee;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .developer-name {
+                font-size: 2.8rem;
+            }
+            
+            .developer-title {
+                font-size: 2rem;
+            }
+            
+            .verses-container {
+                font-size: 1.3rem;
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .lesson-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-book-quran"></i> نوطة التربية الإسلامية</h1>
+            <div class="subtitle">للصف الثالث الثانوي - ٢٠٢٥</div>
+            <div class="teacher-info">إعداد المدرسة: أمل حمادي</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="nav-container">
+            <h2 class="section-title"><i class="fas fa-th-list"></i> وحدات المادة</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="ابحث في النوطة...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="units-grid">
+                <div class="unit-card">
+                    <div class="unit-header">الوحدة الأولى: التلاوة</div>
+                    <div class="unit-content">
+                        <ul class="lessons-list">
+                            <li><i class="fas fa-book"></i> أحكام التجويد</li>
+                            <li><i class="fas fa-star"></i> نعم الله تعالى مدعاة للتوحيد والشكر</li>
+                            <li><i class="fas fa-star"></i> الله وحده هو الخالق المتصرف</li>
+                            <li><i class="fas fa-star"></i> الله وحده هو القادر المعبود</li>
+                            <li><i class="fas fa-star"></i> من مظاهر قدرة الله وعظيم فضله</li>
+                            <li><i class="fas fa-star"></i> دلائل عظمة الخالق عز وجل</li>
+                            <li><i class="fas fa-star"></i> مبادئ وقيم خالدة</li>
+                            <li><i class="fas fa-star"></i> اسس الدعوة الى الله تعالى</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="unit-card">
+                    <div class="unit-header">الوحدة الثانية: الاستحفاظ</div>
+                    <div class="unit-content">
+                        <ul class="lessons-list">
+                            <li><i class="fas fa-file-contract"></i> صيانة الحقوق و توثيق العقود</li>
+                            <li><i class="fas fa-hands-praying"></i> إيمان ودعاء</li>
+                            <li><i class="fas fa-globe"></i> القرآن الكريم وعظيم قدرة الله</li>
+                            <li><i class="fas fa-infinity"></i> سعة علم الله وكمال قدرته</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="unit-card">
+                    <div class="unit-header">الوحدة الثالثة: الأحاديث</div>
+                    <div class="unit-content">
+                        <ul class="lessons-list">
+                            <li><i class="fas fa-handshake"></i> بيعة صادقة</li>
+                            <li><i class="fas fa-fist-raised"></i> الإيمان قوة وعمل</li>
+                            <li><i class="fas fa-gavel"></i> حكم القاضي لا يحل الحرام</li>
+                            <li><i class="fas fa-star"></i> مكانة الشهيد وعظيم أجره</li>
+                            <li><i class="fa-infinity"></i> عموم المسؤولية</li>
+                            <li><i class="fas fa-shield-alt"></i> توجيه نبوي حكيم</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="unit-card">
+                    <div class="unit-header">الوحدة الرابعة: الحضارة</div>
+                    <div class="unit-content">
+                        <ul class="lessons-list">
+                            <li><i class="fas fa-landmark"></i> بناء الحضارة في الإسلام</li>
+                            <li><i class="fas fa-mosque"></i> مظاهر الحضارة الإسلامية</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="unit-card">
+                    <div class="unit-header">الوحدة الخامسة: الأسرة</div>
+                    <div class="unit-content">
+                        <ul class="lessons-list">
+                            <li><i class="fas fa-home"></i> نظام الأسرة في الإسلام</li>
+                            <li><i class="fas fa-venus-mars"></i> المحرمات من النساء في الزواج</li>
+                            <li><i class="fas fa-ring"></i> الخطبة والأسس الإسلامية للزواج</li>
+                            <li><i class="fas fa-file-signature"></i> عقد الزواج</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="unit-card">
+                    <div class="unit-header">الوحدة السادسة: الاقتصاد</div>
+                    <div class="unit-content">
+                        <ul class="lessons-list">
+                            <li><i class="fas fa-coins"></i> نظام المال في الإسلام</li>
+                            <li><i class="fas fa-hand-holding-usd"></i> الزكاة والإنفاق</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-star"></i> دروس مختارة</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tab1">أحكام التجويد</button>
+                <button class="tab-btn" data-tab="tab2">بيعة صادقة</button>
+                <button class="tab-btn" data-tab="tab3">بناء الحضارة</button>
+            </div>
+            
+            <div id="tab1" class="tab-content active">
+                <h3 class="lesson-title"><i class="fas fa-book-open"></i> أحكام النون الساكنة والتنوين</h3>
+                
+                <div class="explanation">
+                    <h4><i class="fas fa-lightbulb"></i> تعريف:</h4>
+                    <p>هي القواعد التي تنظم نطق النون الساكنة والتنوين عند التقاءهما بحروف الهجاء الأخرى في القرآن الكريم، وهي من أهم أحكام التجويد التي تضمن الأداء الصحيح لكتاب الله.</p>
+                </div>
+                
+                <div class="verses-container">
+                    ﴿أَتَىٰ أَمْرُ اللَّـهِ فَلَا تَسْتَعْجِلُوهُ سُبْحَانَهُ وَتَعَالَىٰ عَمَّا يُشْرِكُونَ * يُنَزِّلُ الْمَلَائِكَةَ بِالرُّوحِ مِنْ أَمْرِهِ عَلَىٰ مَن يَشَاءُ مِنْ عِبَادِهِ أَنْ أَنذِرُوا أَنَّهُ لَا إِلَـٰهَ إِلَّا أَنَا فَاتَّقُونِ﴾
+                </div>
+                
+                <div class="explanation">
+                    <h4><i class="fas fa-pen"></i> شرح المفردات:</h4>
+                    <ul>
+                        <li><strong>الإظهار:</strong> إظهار النطق بالنون الساكنة أو التنوين عند التقائهما بحروف الإظهار (ء، هـ، ع، ح، غ، خ) مع عدم الغنة</li>
+                        <li><strong>الإدغام:</strong> دمج النون الساكنة أو التنوين في الحرف التالي عند التقائهما بحروف الإدغام (ي، ر، م، ل، و، ن) مع الغنة</li>
+                        <li><strong>الإقلاب:</strong> قلب النون الساكنة أو التنوين إلى ميم مخفاة عند التقائهما بحرف الباء مع الغنة والإخفاء</li>
+                        <li><strong>الإخفاء:</strong> نطق النون الساكنة أو التنوين نطقاً بين الإظهار والإدغام عند التقائهما بحروف الإخفاء (ت، ث، ج، د، ذ، ز، س، ش، ص، ض، ط، ظ، ف، ق، ك) مع الغنة</li>
+                    </ul>
+                </div>
+                
+                <div class="questions">
+                    <h4><i class="fas fa-question-circle"></i> أسئلة الدرس:</h4>
+                    <ul>
+                        <li>ما الفرق بين الإظهار الحلقي والإظهار الشفوي؟</li>
+                        <li>اذكر حروف الإدغام مع مثال لكل منها.</li>
+                        <li>ما حكم النون الساكنة عند التقائها بحرف الباء؟</li>
+                        <li>لماذا سمي الإخفاء الحقيقي بهذا الاسم؟</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="tab2" class="tab-content">
+                <h3 class="lesson-title"><i class="fas fa-handshake"></i> بيعة صادقة</h3>
+                
+                <div class="explanation">
+                    <h4><i class="fas fa-lightbulb"></i> الحديث الشريف:</h4>
+                    <p>عن عبادة بن الصامت رضي الله عنه أن رسول الله صلى الله عليه وسلم قال: "بَايَعُونِي عَلَى أَنْ لَا تُشْرِكُوا بِاللَّهِ شَيْئًا، وَلَا تَسْرِقُوا، وَلَا تَزْنُوا، وَلَا تَقْتُلُوا أَوْلَادَكُمْ، وَلَا تَأْتُوا بِبُهْتَانٍ تَفْتَرُونَهُ بَيْنَ أَيْدِيكُمْ وَأَرْجُلِكُمْ، وَلَا تَعْصُوا فِي مَعْرُوفٍ، فَمَنْ وَفَى مِنْكُمْ فَأَجْرُهُ عَلَى اللَّهِ، وَمَنْ أَصَابَ مِنْ ذَلِكَ شَيْئًا فَعُوقِبَ فِي الدُّنْيَا فَهُوَ كَفَّارَةٌ لَهُ، وَمَنْ أَصَابَ مِنْ ذَلِكَ شَيْئًا ثُمَّ سَتَرَهُ اللَّهُ فَهُوَ إِلَى اللَّهِ، إِنْ شَاءَ عَفَا عَنْهُ، وَإِنْ شَاءَ عَاقَبَهُ".</p>
+                </div>
+                
+                <div class="explanation">
+                    <h4><i class="fas fa-pen"></i> بنود البيعة:</h4>
+                    <ul>
+                        <li>عدم الشرك بالله تعالى بأي شكل من الأشكال</li>
+                        <li>الامتناع عن السرقة وحفظ أموال الآخرين</li>
+                        <li>تحريم الزنا والحفاظ على الأعراض</li>
+                        <li>حرمة قتل الأولاد والأبناء</li>
+                        <li>الابتعاد عن الافتراء والبهتان والكذب</li>
+                        <li>طاعة الله ورسوله في كل ما هو معروف من الخير</li>
+                    </ul>
+                </div>
+                
+                <div class="questions">
+                    <h4><i class="fas fa-question-circle"></i> أسئلة الدرس:</h4>
+                    <ul>
+                        <li>ما الحكمة من بيعة النبي صلى الله عليه وسلم لأصحابه؟</li>
+                        <li>كيف ربطت البيعة بين تحريم الشرك وتحريم الكبائر؟</li>
+                        <li>ما أهمية طاعة النبي صلى الله عليه وسلم في بناء المجتمع؟</li>
+                        <li>ما المراد بالمعروف في قوله عليه السلام "ولا تعصوا في معروف"؟</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="tab3" class="tab-content">
+                <h3 class="lesson-title"><i class="fas fa-landmark"></i> بناء الحضارة في الإسلام</h3>
+                
+                <div class="explanation">
+                    <h4><i class="fas fa-lightbulb"></i> مفهوم الحضارة:</h4>
+                    <p>هي مجموعة المفاهيم والمنتجات المادية والمعنوية التي تنشأ عن تصور أمة للكون والإنسان والحياة، وتشمل الإنتاج الأدبي والعلمي والفني والأخلاقي، وتسهم في رقي الفرد والمجتمع.</p>
+                </div>
+                
+                <div class="explanation">
+                    <h4><i class="fas fa-pen"></i> مقومات الحضارة الإسلامية:</h4>
+                    <ul>
+                        <li><strong>العقيدة:</strong> الإيمان بالله وملائكته وكتبه ورسله واليوم الآخر والقدر خيره وشره كأساس فكري</li>
+                        <li><strong>العبادة:</strong> الصلاة، الزكاة، الصوم، الحج، وكل عمل صالح يبتغي به وجه الله</li>
+                        <li><strong>الأخلاق:</strong> الصدق، الأمانة، العدل، الإحسان، البر، وغيرها من القيم التي تنظم العلاقات</li>
+                        <li><strong>العلم:</strong> طلب العلم فريضة على كل مسلم ومسلمة في شتى المجالات</li>
+                    </ul>
+                </div>
+                
+                <div class="verses-container">
+                    ﴿يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ﴾ (المجادلة: 11)
+                </div>
+                
+                <div class="questions">
+                    <h4><i class="fas fa-question-circle"></i> أسئلة الدرس:</h4>
+                    <ul>
+                        <li>ما الفرق بين الثقافة والحضارة والمدنية؟</li>
+                        <li>كيف ساهم الإيمان باليوم الآخر في بناء الحضارة الإسلامية؟</li>
+                        <li>ما دور المساجد في الحضارة الإسلامية؟</li>
+                        <li>اذكر بعض إنجازات المسلمين في العلوم التجريبية.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-video"></i> دروس بالفيديو</h2>
+            
+            <div class="video-container">
+                <h3 class="lesson-title"><i class="fas fa-user"></i> أم سليم بنت ملحان</h3>
+                <p>صحابية جليلة، أم أنس بن مالك خادم رسول الله، كانت مثالاً في التضحية والإيمان والصبر</p>
+                <div class="video-placeholder">
+                    <div>
+                        <i class="fas fa-play-circle"></i>
+                        <p>فيديو تعليمي عن سيرة أم سليم بنت ملحان</p>
+                    </div>
+                </div>
+                <button class="btn">شاهد الفيديو على يوتيوب</button>
+            </div>
+            
+            <div class="video-container">
+                <h3 class="lesson-title"><i class="fas fa-user-graduate"></i> الإمام جعفر الصادق</h3>
+                <p>عالم في الفقه والكيمياء والحديث</p>
+                <div class="video-placeholder">
+                    <div>
+                        <i class="fas fa-play-circle"></i>
+                        <p>فيديو تعليمي عن سيرة الإمام جعفر الصادق</p>
+                    </div>
+                </div>
+                <button class="btn">شاهد الفيديو على يوتيوب</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- قسم المطور المميز -->
+    <section class="developer-section">
+        <!-- رموز برمجية عائمة -->
+        <div class="floating-code code-1">&lt;HTML&gt;</div>
+        <div class="floating-code code-2">.CSS { }</div>
+        <div class="floating-code code-3">function()</div>
+        <div class="floating-code code-4">const dev = true;</div>
+        
+        <div class="developer-container">
+            <h2 class="developer-title">مطور المشروع</h2>
+            <div class="developer-name">mu6tx</div>
+            <div class="developer-tag">مطور واجهات المستخدم وتجربة المستخدم</div>
+            
+            <p class="developer-description">
+                مطور ويب متخصص في إنشاء واجهات مستخدم تفاعلية وتجارب مستخدم استثنائية. 
+                أعمل على تحويل الأفكار إلى واقع رقمي باستخدام أحدث التقنيات وأفضل الممارسات، 
+                مع التركيز على الأداء العالي والتجربة السلسة للمستخدم.
+            </p>
+            
+            <div class="developer-skills">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="skill-title">تطوير الواجهات</h3>
+                    <ul class="skill-list">
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js & Vue.js</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="skill-title">التصميم</h3>
+                    <ul class="skill-list">
+                        <li>UI/UX Design</li>
+                        <li>Interaction Design</li>
+                        <li>Prototyping</li>
+                        <li>Figma & Adobe XD</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="skill-title">الأداء</h3>
+                    <ul class="skill-list">
+                        <li>Optimization</li>
+                        <li>Progressive Web Apps</li>
+                        <li>Cross-Browser</li>
+                        <li>Accessibility</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="developer-tag" style="background: linear-gradient(90deg, var(--gold), #e74c3c);">
+                التقنيات المستخدمة في هذا المشروع
+            </h3>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="tech-name">HTML5</div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="tech-name">CSS3</div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="tech-name">JavaScript</div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-font-awesome"></i>
+                    </div>
+                    <div class="tech-name">FontAwesome</div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="tech-name">Responsive</div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="tech-name">UI Design</div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="tech-name">Clean Code</div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="tech-name">Innovation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <p>نوطة التربية الإسلامية للصف الثالث الثانوي - إعداد المدرسة أمل حمادي</p>
+            <p>جميع الحقوق محفوظة © 2025</p>
+            <div class="copyright">
+                تم التطوير بواسطة: mu6tx &lt;/&gt; | نسخة 1.0.0
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Show the selected tab content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Search functionality
+        const searchBtn = document.getElementById('searchBtn');
+        searchBtn.addEventListener('click', () => {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (searchTerm) {
+                alert(`سيتم البحث عن: "${searchTerm}" - هذه النسخة التوضيحية تدعم البحث في النسخة الكاملة`);
+                // In a real application, implement actual search functionality
+            } else {
+                alert("الرجاء إدخال كلمة للبحث");
+            }
+        });
+        
+        // Enter key for search
+        document.getElementById('searchInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+        
+        // Animation for cards
+        const unitCards = document.querySelectorAll('.unit-card');
+        unitCards.forEach((card, index) => {
+            card.style.transform = 'translateY(20px)';
+            card.style.opacity = '0';
+            card.style.transition = 'transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease';
+            
+            setTimeout(() => {
+                card.style.transform = 'translateY(0)';
+                card.style.opacity = '1';
+            }, 200 + index * 100);
+        });
+        
+        // Floating code animation
+        const floatingCodes = document.querySelectorAll('.floating-code');
+        floatingCodes.forEach(code => {
+            const duration = 15 + Math.random() * 10;
+            code.style.animationDuration = `${duration}s`;
+        });
+        
+        // Skill cards hover effect
+        const skillCards = document.querySelectorAll('.skill-card');
+        skillCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
